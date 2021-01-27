@@ -1,0 +1,44 @@
+{
+    "name": "cocoa/be-stack",
+    "description": "Cocoa Back-end Stack.",
+    "keywords": ["framework", "laravel", "lumen"],
+    "license": "MIT",
+    "type": "project",
+    
+    "require": {
+        "php": ">=5.6.4",
+        "ext-json": "*",
+        "albertcht/lumen-helpers": "^0.8.0",
+        "laravel/lumen-framework": "5.4.*",
+        "vlucas/phpdotenv": "~2.2",
+        "ext-pdo": "*",
+        "doctrine/dbal": "^2.10"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "~1.4",
+        "phpunit/phpunit": "~5.0",
+        "mockery/mockery": "~0.9",
+        "spatie/test-time": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "CocoaStudio\\": [ "app/", "src/" ]
+        },
+        "files": [
+            "vendor/albertcht/lumen-helpers/src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/",
+            "database/"
+        ]
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"copy('.env.example', '.env');\""
+        ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
