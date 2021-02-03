@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use CocoaStudio\Component\Contact\Domain\Entity\Contact;
 
 /**
- * Class DatabaseSeeder
+ * Class ContactsSeeder
  */
-class DatabaseSeeder extends Seeder
+class ContactsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +15,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(ContactsSeeder::class);
+        factory(Contact::class)->create();
     }
 }
