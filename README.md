@@ -1,57 +1,60 @@
-# Docker + Lumen with Nginx and MySQL
+# Address Book API #
 
-![image](Lumen_splash.png)
+## Start PHP-FPM Session ##
 
-This setup is great for writing quick apps in PHP using Lumen from an any Docker client. It uses docker-compose to setup the application services.
+NB: `be-stack` containers should be running.
 
-## Clone this repo
-
-```bash
-git clone https://github.com/saada/docker-lumen.git
-cd docker-lumen
-```
-
-## Create Lumen App
-
-now, create the app in the `images\php` directory named `app`
+To check if your services are running correctly perform 
+the following:
 
 ```bash
-cd images/php
-docker run --rm -it -v $(pwd):/data/www --entrypoint /root/.composer/vendor/bin/lumen alairock/lumen new app
+WORKING_APP_DIR $ docker-compose ps 
 ```
 
-### Configuration
+The command above should give you a list of *services* defined 
+within your `WORKING_APP_DIR` workspace.
 
-To change configuration values, look in the `docker-compose.yml` file and change the `php` container's environment variables. These directly correlate to the Lumen environment variables.
-
-## Docker Setup
-
-### [Docker for Mac](https://docs.docker.com/docker-for-mac/)
-
-### [Docker for Windows](https://docs.docker.com/docker-for-windows/)
-
-### [Docker for Linux](https://docs.docker.com/engine/installation/linux/)
-
-### Build & Run
+- Step 1
 
 ```bash
-docker-compose up --build -d
+WORKING_APP_DIR $ docker exec -it be-stack_php_1 bash 
 ```
 
-Navigate to [http://localhost:80](http://localhost:80) and you should see something like this
-![image](Lumen_browser.png)
-
-
-Success! You can now start developing your Lumen app on your host machine and you should see your changes on refresh! Classic PHP development cycle. A good place to start is `images/php/app/routes/web.php`.
-
-Feel free to configure the default port 80 in `docker-compose.yml` to whatever you like.
-
-### Stop Everything
+- Step 2
 
 ```bash
-docker-compose down
+www@0a7abbb5aa5a:/app/public $ cd .. 
 ```
 
-## Contribute
+You can verify if you are on your Application's root directory 
+by just listing your directory contents.
 
-Submit a Pull Request!
+```bash
+ww@0a7abbb5aa5a:/app$ ls -l
+total 776
+-rw-r--r--  1 www  www     465 Feb  3 21:10 README.md
+drwxr-xr-x  3 www  www      96 Feb  3 19:00 app
+-rw-r--r--  1 www  www    1094 Jan 27 20:19 artisan
+drwxr-xr-x  3 www  www      96 Jan 27 20:19 bootstrap
+-rw-r--r--  1 www  www    1137 Jan 28 22:31 composer.json
+-rw-r--r--  1 www  www  196084 Jan 27 20:51 composer.lock
+drwxr-xr-x  3 www  www      96 Feb  3 20:34 config
+drwxr-xr-x  5 www  www     160 Jan 27 20:44 database
+-rw-r--r--  1 www  www    1551 Jan 27 20:19 docker-compose.yml
+-rw-r--r--  1 www  www     414 Jan 27 20:19 nginx.conf
+-rw-r--r--  1 www  www      56 Jan 27 20:19 nginx.docker
+-rw-r--r--  1 www  www  550138 Jan 27 20:19 package-lock.json
+-rw-r--r--  1 www  www     985 Jan 27 20:19 package.json
+-rw-r--r--  1 www  www    1205 Jan 27 20:19 php.docker
+-rw-r--r--  1 www  www     179 Jan 28 22:29 phpspec.yml
+-rw-r--r--  1 www  www     874 Jan 28 22:34 phpunit.xml
+drwxr-xr-x  4 root root    128 Jan 27 20:19 public
+drwxr-xr-x  3 www  www      96 Jan 27 20:19 resources
+drwxr-xr-x  3 www  www      96 Jan 27 20:19 routes
+drwxr-xr-x  4 www  www     128 Feb  3 19:00 src
+drwxr-xr-x  5 www  www     160 Jan 27 20:19 storage
+drwxr-xr-x  6 www  www     192 Jan 28 22:29 tests
+drwxr-xr-x 30 www  www     960 Jan 27 20:51 vendor
+-rw-r--r--  1 www  www     796 Jan 27 20:19 webpack.mix.js
+```
+
