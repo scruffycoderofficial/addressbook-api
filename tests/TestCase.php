@@ -1,6 +1,11 @@
 <?php
 
-abstract class TestCase extends Laravel\Lumen\Testing\TestCase
+use CocoaStudio\Component\Testing\TestCase as BaseTestCase;
+
+/**
+ * Class TestCase
+ */
+abstract class TestCase extends BaseTestCase
 {
     /**
      * Creates the application.
