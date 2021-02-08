@@ -9,7 +9,7 @@ use Illuminate\Console\Command;
 /**
  * Class CreateDatabase
  *
- * @package App\Console\Commands
+ * @author Luyanda Siko <sikoluyanda@gmail.com>
  */
 class CreateDatabase extends Command
 {

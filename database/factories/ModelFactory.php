@@ -11,9 +11,11 @@
 |
 */
 
-$factory->define(CocoaStudio\Component\User::class, function (Faker\Generator $faker) {
+$factory->define(CocoaStudio\Component\Contact\Domain\Entity\Contact::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
-        'email' => $faker->email,
+        'first_name' => $faker->firstName,
+        'last_name' => $faker->lastName,
+        'mobile_number' => $faker->phoneNumber,
+        'email_address' => $faker->email
     ];
 });

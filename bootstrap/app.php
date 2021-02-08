@@ -27,6 +27,18 @@ $app = new Laravel\Lumen\Application(
 
  $app->withEloquent();
 
+ /*
+|--------------------------------------------------------------------------
+| Register Application configuration files
+|--------------------------------------------------------------------------
+|
+| Adds an ability to override and define new configuration settings 
+| for the Application.
+|
+*/
+
+ $app->configure('app');
+
 /*
 |--------------------------------------------------------------------------
 | Register Container Bindings
@@ -40,12 +52,12 @@ $app = new Laravel\Lumen\Application(
 
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
-    CocoaStudio\Component\Exceptions\Handler::class
+    \CocoaStudio\Component\Core\Exceptions\Handler::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
-    CocoaStudio\Component\Console\Kernel::class
+    \CocoaStudio\Component\Core\Console\Kernel::class
 );
 
 /*
@@ -60,7 +72,7 @@ $app->singleton(
 */
 
 $app->middleware([
-    CocoaStudio\Component\Http\Middleware\CorsHandler::class
+    CocoaStudio\Component\Core\Http\Middleware\CorsHandler::class
 ]);
 
 // $app->routeMiddleware([
@@ -81,7 +93,7 @@ $app->middleware([
 // $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
-
+$app->register(CocoaStudio\Component\Contact\Domain\Providers\ContactDomainServiceProvider::class);
 /*
 |--------------------------------------------------------------------------
 | Load The Application Routes
@@ -92,12 +104,8 @@ $app->middleware([
 | can respond to, as well as the controllers that may handle them.
 |
 */
-
-$app->group([
-        'namespace' => 'CocoaStudio\Component\Http\Controllers',
-        'prefix' => 'v1/api',
-    ], function ($app) {
-    require __DIR__.'/../routes/api.php';
+$app->group([ 'namespace' => config('app.controller_namespaces.contacts'), 'prefix' => 'v1/api', ], function ($app) {
+    require __DIR__ . '/../routes/contacts.php';
 });
 
 return $app;

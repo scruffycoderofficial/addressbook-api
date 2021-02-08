@@ -1,6 +1,13 @@
 <?php
 
-abstract class TestCase extends Laravel\Lumen\Testing\TestCase
+use CocoaStudio\Component\Testing\TestCase as BaseTestCase;
+
+/**
+ * Class TestCase
+ *
+ * @author Luyanda Siko <sikoluyanda@gmail.com>
+ */
+abstract class TestCase extends BaseTestCase
 {
     /**
      * Creates the application.
@@ -9,6 +16,6 @@ abstract class TestCase extends Laravel\Lumen\Testing\TestCase
      */
     public function createApplication()
     {
-        return require __DIR__.'/../bootstrap/app.php';
+        return require __DIR__ . '/../bootstrap/app.php';
     }
 }

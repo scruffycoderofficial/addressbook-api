@@ -1,6 +1,6 @@
 <?php
 
-namespace CocoaStudio\Component\Console;
+namespace CocoaStudio\Component\Core\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Laravel\Lumen\Console\Kernel as ConsoleKernel;

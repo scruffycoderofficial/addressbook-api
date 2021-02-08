@@ -1,0 +1,8 @@
+formatter.name: pretty
+
+suites:
+    app_suite:
+        namespace: CocoaStudio\Component
+        psr4_prefix: CocoaStudio\Component
+        spec_src: app/
+        spec_path: tests/

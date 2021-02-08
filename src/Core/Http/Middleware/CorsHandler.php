@@ -1,11 +1,13 @@
 <?php
 
-namespace CocoaStudio\Component\Http\Middleware;
+namespace CocoaStudio\Component\Core\Http\Middleware;
 
 use Closure;
 
 /**
  * Class CorsHandler
+ *
+ * @author Luyanda Siko <sikoluyanda@gmail.com>
  */
 class CorsHandler
 {
