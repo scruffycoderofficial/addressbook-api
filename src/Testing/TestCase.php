@@ -11,6 +11,8 @@ use Laravel\Lumen\Testing\Concerns\MakesHttpRequests;
 
 /**
  * Class TestCase
+ *
+ * @author Luyanda Siko <sikoluyanda@gmail.com>
  */
 abstract class TestCase extends BaseTestcase
 {

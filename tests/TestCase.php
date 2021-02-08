@@ -4,6 +4,8 @@ use CocoaStudio\Component\Testing\TestCase as BaseTestCase;
 
 /**
  * Class TestCase
+ *
+ * @author Luyanda Siko <sikoluyanda@gmail.com>
  */
 abstract class TestCase extends BaseTestCase
 {
@@ -14,6 +16,6 @@ abstract class TestCase extends BaseTestCase
      */
     public function createApplication()
     {
-        return require __DIR__.'/../bootstrap/app.php';
+        return require __DIR__ . '/../bootstrap/app.php';
     }
 }

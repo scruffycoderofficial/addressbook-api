@@ -2,15 +2,16 @@
 
 namespace CocoaStudio\Component\Contact\Domain\Entity;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use CocoaStudio\Component\Contact\Domain\Contract\EntityModel;
+use Illuminate\Database\Eloquent\{ SoftDeletes, Model };
 
 /**
  * Class Contact
  */
-class Contact extends Model implements EntityModel
+class Contact extends Model
 {
+    /**
+     * Soft delete Contact records
+     */
     use SoftDeletes;
 
     /** {@inheritdoc} */
@@ -18,10 +19,6 @@ class Contact extends Model implements EntityModel
         'first_name', 'last_name', 'mobile_number', 'email_address'
     ];
 
-    /**
-     * Soft Delete feature
-     * 
-     * @var $dates
-     */
+    /** {@inheritdoc} */
     protected $dates = [ 'deleted_at' ];
 }

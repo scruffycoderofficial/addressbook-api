@@ -6,6 +6,8 @@ use Closure;
 
 /**
  * Class CorsHandler
+ *
+ * @author Luyanda Siko <sikoluyanda@gmail.com>
  */
 class CorsHandler
 {

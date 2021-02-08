@@ -2,6 +2,8 @@
 
 /**
  * Class ContactsControllerTest
+ *
+ * @author Luyanda Siko <sikoluyanda@gmail.com>
  */
 class ContactsControllerTest extends TestCase
 {
@@ -23,7 +25,8 @@ class ContactsControllerTest extends TestCase
                         'mobile_number', 
                         'email_address'
                     ]
-                ]
+                ],
+                'success'
             ]
         );
     }
