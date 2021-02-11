@@ -5,7 +5,7 @@ namespace CocoaStudio\Component\Contact\Domain\Repository;
 use Illuminate\Database\Eloquent\Collection;
 
 use CocoaStudio\Component\Contact\Domain\{
-    Model\ContactModel
+    Model\ContactModelContact
 };
 
 /**
@@ -13,7 +13,7 @@ use CocoaStudio\Component\Contact\Domain\{
  *
  * @author Luyanda Siko <sikoluyanda@gmail.com>
  */
-class ContactRepository extends ContactModel
+class ContactRepository extends ContactModelContact
 {
     /**
      * @return Collection

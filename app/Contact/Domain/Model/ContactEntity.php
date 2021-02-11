@@ -3,7 +3,7 @@
 namespace CocoaStudio\Component\Contact\Domain\Model;
 
 use CocoaStudio\Component\Contact\Domain\{
-    Contract\EntityModel,
+    Contract\ContactEntityModel,
     Entity\Contact
 };
 
@@ -12,10 +12,10 @@ use CocoaStudio\Component\Contact\Domain\{
  *
  * @author Luyanda Siko <sikoluyanda@gmail.com>
  */
-abstract class ContactModel implements EntityModel
+abstract class ContactModelContact implements ContactEntityModel
 {
     /**
-     * @var EntityModel $entity
+     * @var ContactEntityModel $entity
      */
     protected $entity;
 

@@ -5,8 +5,8 @@ namespace CocoaStudio\Component\Contact\Domain\Service;
 use Illuminate\Database\Eloquent\Collection;
 
 use CocoaStudio\Component\Contact\Domain\{
-    Repository\ContactRepository,
-    Contract\DomainService
+    Contract\ContactService as AbstractContactService,
+    Repository\ContactEntityRepository
 };
 
 /**
@@ -14,19 +14,19 @@ use CocoaStudio\Component\Contact\Domain\{
  *
  * @author Luyanda Siko <sikoluyanda@gmail.com>
  */
-class ContactsService implements DomainService
+class ContactService implements AbstractContactService
 {
     /**
-     * @var ContactRepository
+     * @var ContactEntityRepository
      */
     protected $contactRepository;
 
     /**
      * Class constructor
      * 
-     * @param ContactRepository $contactRepository
+     * @param ContactEntityRepository $contactRepository
      */
-    public function __construct(ContactRepository $contactRepository)
+    public function __construct(ContactEntityRepository $contactRepository)
     {
         $this->contactRepository = $contactRepository;
     }
@@ -34,7 +34,7 @@ class ContactsService implements DomainService
     /**
      * @return Collection
      */
-    public function getAllActive(): Collection
+    public function getActiveCollection(): Collection
     {
         return $this->contactRepository->getActive();
     }

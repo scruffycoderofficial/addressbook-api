@@ -5,9 +5,9 @@ namespace CocoaStudio\Component\Contact\Domain\Providers;
 use Illuminate\Support\ServiceProvider;
 
 use CocoaStudio\Component\Contact\Domain\{
-    Repository\ContactRepository,
+    Repository\ContactEntityRepository,
     Service\ContactsService,
-    Contract\DomainService
+    Contract\ContactService
 };
 
 /**
@@ -20,9 +20,9 @@ class ContactDomainServiceProvider extends ServiceProvider
     /** {@inheritdoc} */
     public function register()
     {
-        $this->app->bind(DomainService::class, function(){
+        $this->app->bind(ContactService::class, function(){
             return new ContactsService(
-                $this->app->make(ContactRepository::class)
+                $this->app->make(ContactEntityRepository::class)
             );
         });
     }
