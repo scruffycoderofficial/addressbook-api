@@ -1,7 +1,7 @@
 <?php
 
 use CocoaStudio\Component\Contact\Domain\{
-    Contract\DomainService,
+    Contract\ContactService,
     Entity\Contact
 };
 
@@ -17,7 +17,7 @@ class DomainServiceTest extends TestCase
      */
     public function it_has_active_contacts()
     {
-        $domainService = $this->getMockBuilder(DomainService::class)
+        $domainService = $this->getMockBuilder(ContactService::class)
             ->onlyMethods(['getAllActive'])
             ->getMock();
 

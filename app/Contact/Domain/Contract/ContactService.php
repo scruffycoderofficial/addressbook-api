@@ -5,16 +5,20 @@ namespace CocoaStudio\Component\Contact\Domain\Contract;
 use Illuminate\Database\Eloquent\Collection;
 
 /**
- * Class DomainService
+ * Class ContactService
  *
+ * @package CocoaStudio\Component\Contact\Domain\Contract
  * @author Luyanda Siko <sikoluyanda@gmail.com>
  */
-interface DomainService
+interface ContactService
 {
     /**
      * A list of active Contacts
      *
+     * Condition: `deleted_at` must be null
+     *
+     *
      * @return Collection
      */
-    public function getAllActive(): Collection;
+    public function getActiveCollection(): Collection;
 }

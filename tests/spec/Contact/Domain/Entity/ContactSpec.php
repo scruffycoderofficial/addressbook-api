@@ -5,7 +5,7 @@ namespace spec\CocoaStudio\Component\Contact\Domain\Entity;
 use PhpSpec\ObjectBehavior;
 
 use CocoaStudio\Component\Contact\Domain\{
-    Contract\EntityModel,
+    Contract\ContactEntityModel,
     Entity\Contact
 };
 
@@ -23,6 +23,6 @@ class ContactSpec extends ObjectBehavior
 
     function it_is_an_entity_model()
     {
-        $this->shouldImplement(EntityModel::class);
+        $this->shouldImplement(ContactEntityModel::class);
     }
 }

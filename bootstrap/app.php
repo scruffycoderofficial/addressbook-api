@@ -93,7 +93,7 @@ $app->middleware([
 // $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
-$app->register(CocoaStudio\Component\Contact\Domain\Providers\ContactDomainServiceProvider::class);
+$app->register(CocoaStudio\Component\Contact\Domain\Providers\ContactServiceProvider::class);
 /*
 |--------------------------------------------------------------------------
 | Load The Application Routes

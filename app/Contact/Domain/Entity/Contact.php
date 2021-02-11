@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\{ SoftDeletes, Model };
 
 /**
  * Class Contact
+ *
+ * @package CocoaStudio\Component\Contact\Domain\Entity
+ * @author Luyanda Siko <sikoluyanda@gmail.com>
  */
 class Contact extends Model
 {
@@ -14,11 +17,13 @@ class Contact extends Model
      */
     use SoftDeletes;
 
-    /** {@inheritdoc} */
+    /**
+     * Unguarded Contact fields
+    */
     protected $fillables = [
         'first_name', 'last_name', 'mobile_number', 'email_address'
     ];
 
-    /** {@inheritdoc} */
+    /** {@inheritDoc} */
     protected $dates = [ 'deleted_at' ];
 }

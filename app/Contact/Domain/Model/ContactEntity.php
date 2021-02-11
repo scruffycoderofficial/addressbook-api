@@ -8,11 +8,12 @@ use CocoaStudio\Component\Contact\Domain\{
 };
 
 /**
- * Class ContactModel
+ * Class ContactEntity
  *
+ * package CocoaStudio\Component\Contact\Domain\Model
  * @author Luyanda Siko <sikoluyanda@gmail.com>
  */
-abstract class ContactModelContact implements ContactEntityModel
+abstract class ContactEntity implements ContactEntityModel
 {
     /**
      * @var ContactEntityModel $entity
@@ -20,7 +21,7 @@ abstract class ContactModelContact implements ContactEntityModel
     protected $entity;
 
     /**
-     * @param $entityModel
+     * @param Contact $entity
      */
     public function __construct(Contact $entity)
     {
@@ -30,7 +31,7 @@ abstract class ContactModelContact implements ContactEntityModel
     /**
      * @return Contact
      */
-    public function getEntity(): Contact
+    public function getEntityModel(): Contact
     {
         return $this->entity;
     }

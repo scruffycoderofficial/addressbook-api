@@ -5,16 +5,19 @@ namespace CocoaStudio\Component\Contact\Domain\Contract;
 use CocoaStudio\Component\Contact\Domain\Entity\Contact;
 
 /**
- * Class EntityModel
+ * Class ContactEntityModel
  *
+ * A shallow implementation of an AggregateRoot
+ *
+ * @package CocoaStudio\Component\Contact\Domain\Contract
  * @author Luyanda Siko <sikoluyanda@gmail.com>
  */
-interface EntityModel
+interface ContactEntityModel
 {
     /**
-     * An entity model that acts as an AggregateRoot
+     * A child class of Eloquent Model
      *
      * @return Contact
      */
-    public function getEntity(): Contact;
+    public function getEntityModel(): Contact;
 }

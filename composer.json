@@ -12,14 +12,16 @@
         "laravel/lumen-framework": "5.4.*",
         "vlucas/phpdotenv": "~2.2",
         "ext-pdo": "*",
-        "doctrine/dbal": "^2.10"
+        "doctrine/dbal": "^2.10",
+        "symfony/messenger": "@dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "phpunit/phpunit": "^8.5",
         "mockery/mockery": "~0.9",
         "spatie/test-time": "^1.2",
-        "phpspec/phpspec": "^6.3"
+        "phpspec/phpspec": "^6.3",
+        "phpstan/phpstan": "^0.12.75"
     },
     "autoload": {
         "psr-4": {

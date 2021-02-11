@@ -3,7 +3,7 @@
 use Illuminate\Database\Eloquent\Model;
 
 use CocoaStudio\Component\Contact\{
-    Domain\Repository\ContactRepository,
+    Domain\Repository\ContactEntityRepository,
     Domain\Entity\Contact
 };
 
@@ -20,7 +20,7 @@ class ContactRepositoryTest extends TestCase
     {
         parent::setUp();
 
-        $this->contactRepository = new ContactRepository(factory(Contact::class)->make());
+        $this->contactRepository = new ContactEntityRepository(factory(Contact::class)->make());
     }
 
     /**

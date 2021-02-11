@@ -12,6 +12,7 @@ use CocoaStudio\Component\Contact\Domain\{
 /**
  * Class ContactService
  *
+ * @package CocoaStudio\Component\Contact\Domain\Service
  * @author Luyanda Siko <sikoluyanda@gmail.com>
  */
 class ContactService implements AbstractContactService
@@ -37,5 +38,23 @@ class ContactService implements AbstractContactService
     public function getActiveCollection(): Collection
     {
         return $this->contactRepository->getActive();
+    }
+
+    /**
+     * @param $collection
+     * @return Collection
+     */
+    public function addToArchiveCollection($collection): Collection
+    {
+        return new class extends Collection{};
+    }
+
+    /**
+     * @param $collection
+     * @return Collection
+     */
+    public function addToActiveCollection($collection): Collection
+    {
+        return new class extends Collection{};
     }
 }

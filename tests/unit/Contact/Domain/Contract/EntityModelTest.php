@@ -3,7 +3,7 @@
 use Illuminate\Database\Eloquent\Model;
 
 use CocoaStudio\Component\Contact\Domain\{
-    Contract\EntityModel,
+    Contract\ContactEntityModel,
     Entity\Contact
 };
 
@@ -19,7 +19,7 @@ class EntityModelTest extends TestCase
      */
     public function it_has_contact_entity_model()
     {
-        $entityModel = $this->getMockBuilder(EntityModel::class)
+        $entityModel = $this->getMockBuilder(ContactEntityModel::class)
             ->onlyMethods(['getEntity'])
             ->getMock();
 
@@ -29,7 +29,7 @@ class EntityModelTest extends TestCase
                 return factory(Contact::class)->make();
             });
 
-        /** @var EntityModel $entityModel */
+        /** @var ContactEntityModel $entityModel */
         self::assertInstanceOf(Model::class, $entityModel->getEntity());
     }
 }
